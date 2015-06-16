@@ -1,0 +1,41 @@
+{
+  "name": "CoffeeShop",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "dateCreated": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "customUsers": {
+      "type": "hasAndBelongsToMany",
+      "model": "CustomUser",
+      "foreignKey": "customUserId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "coffeeShopOwner",
+      "permission": "ALLOW",
+      "property": "updateAttributes"
+    }
+  ],
+  "methods": []
+}

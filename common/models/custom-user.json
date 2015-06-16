@@ -1,0 +1,26 @@
+{
+  "name": "CustomUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "coffeeShops": {
+      "type": "hasAndBelongsToMany",
+      "model": "CoffeeShop",
+      "foreignKey": "coffeeShopId"
+    }
+  },
+  "acls": [
+  {
+    "accessType": "EXECUTE",
+    "principalType": "ROLE",
+    "principalId": "$owner",
+    "permission": "ALLOW",
+    "property": "__create__coffeeShops"
+  }],
+  "methods": []
+}

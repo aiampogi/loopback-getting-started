@@ -11,8 +11,11 @@ app.start = function() {
   });
 };
 
-// access token will be searched in cookies as well.
-app.use(loopback.token({ model: app.models.accessToken }));
+// app.use(function(req, res, next){
+// 	console.log(req.signedCookies);
+// 	console.log(res);
+// 	next();
+// });
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.

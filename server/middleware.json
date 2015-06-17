@@ -10,6 +10,32 @@
         "credentials": true,
         "maxAge": 86400
       }
+    },
+    "loopback#session": {
+      "params": {
+        "secret": "wewew",
+        "saveUninitialized": true,
+        "resave": true
+      }
+    },
+    "loopback#cookieParser": {
+      "params": "wewew"
+    },
+    "lusca": {
+      "params": {
+        "csrf": {
+          "angular": true,
+          "secret": "wewew"
+        },
+        "csp": {
+          "policy": {
+            "default-src": "'self'"
+          }
+        },
+        "xframe": "SAMEORIGIN",
+        "p3p": "ABCDEF",
+        "xssProtection": true
+      }
     }
   },
   "session": {

@@ -5,10 +5,13 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties":
+  {},
   "validations": [],
-  "relations": {
-    "coffeeShops": {
+  "relations":
+  {
+    "coffeeShops":
+    {
       "type": "hasAndBelongsToMany",
       "model": "CoffeeShop",
       "foreignKey": "coffeeShopId"

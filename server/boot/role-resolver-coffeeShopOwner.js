@@ -1,26 +1,34 @@
-module.exports = function(app) {
+'use strict';
+
+module.exports = function(app)
+{
   var Role = app.models.Role;
 
-  Role.registerResolver('coffeeShopOwner', function(role, context, cb) {
-    function reject() {
+  Role.registerResolver('coffeeShopOwner', function(role, context, cb)
+  {
+    function reject()
+    {
       //process.nextTick(function() {
-        cb(null, false);
+      cb(null, false);
       //});
     }
 
     // if the target model is not project
-    if (context.modelName !== 'CoffeeShop') {
+    if (context.modelName !== 'CoffeeShop')
+    {
       return reject();
     }
 
     // do not allow anonymous users
     var userId = context.accessToken.userId;
-    if (!userId) {
+    if (!userId)
+    {
       return reject();
     }
 
     // check if userId is in team table for the given project id
-    context.model.findById(context.modelId, function(err, coffeeShop) {
+    context.model.findById(context.modelId, function(err, coffeeShop)
+    {
       if (err || !coffeeShop)
         return reject();
 
@@ -31,7 +39,7 @@ module.exports = function(app) {
         .then(function(user)
         {
           console.log(user);
-          if(!user)
+          if (!user)
           {
             return reject();
           }
@@ -60,4 +68,4 @@ module.exports = function(app) {
       // });
     });
   });
-}
+};

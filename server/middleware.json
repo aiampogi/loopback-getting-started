@@ -1,34 +1,43 @@
 {
-  "initial:before": {
-    "loopback#favicon": {}
+  "initial:before":
+  {
+    "loopback#favicon":
+    {}
   },
-  "initial": {
-    "compression": {},
-    "cors": {
-      "params": {
+  "initial":
+  {
+    "compression":
+    {},
+    "cors":
+    {
+      "params":
+      {
         "origin": true,
         "credentials": true,
         "maxAge": 86400
       }
     },
-    "loopback#session": {
-      "params": {
+    "loopback#session":
+    {
+      "params":
+      {
         "secret": "wewew",
         "saveUninitialized": true,
         "resave": true
       }
     },
-    "loopback#cookieParser": {
+    "loopback#cookieParser":
+    {
       "params": "wewew"
     },
-    "lusca": {
-      "params": {
-        "csrf": {
-          "angular": true,
-          "secret": "wewew"
-        },
-        "csp": {
-          "policy": {
+    "lusca":
+    {
+      "params":
+      {
+        "csp":
+        {
+          "policy":
+          {
             "default-src": "'self'"
           }
         },
@@ -38,20 +47,24 @@
       }
     }
   },
-  "session": {
+  "session":
+  {},
+  "auth":
+  {},
+  "parse":
+  {},
+  "routes":
+  {},
+  "files":
+  {},
+  "final":
+  {
+    "loopback#urlNotFound":
+    {}
   },
-  "auth": {
-  },
-  "parse": {
-  },
-  "routes": {
-  },
-  "files": {
-  },
-  "final": {
-    "loopback#urlNotFound": {}
-  },
-  "final:after": {
-    "errorhandler": {}
+  "final:after":
+  {
+    "errorhandler":
+    {}
   }
 }

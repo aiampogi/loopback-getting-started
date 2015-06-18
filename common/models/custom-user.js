@@ -11,4 +11,10 @@ module.exports = function(CustomUser)
 	// 		console.log(req.accessToken);
 	// 		next();
 	// 	});
+
+
+	// TODO:
+	// remote method getRoles ($owner only)
+	// arg should be req to get accessToken.userId (foreign key of accessToken)
+	// then from there we can know the role by using Role.getRoles({principalType: RoleMapping.USER, principalId: user.id}, function(err, roles)
 };

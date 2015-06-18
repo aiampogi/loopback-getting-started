@@ -24,7 +24,7 @@ module.exports = function(app)
     }
 
     // res.cookie('XSRF-TOKEN', req.csrfToken());
-    console.log(req.session['wewew']);
+    // console.log(req.session['wewew']);
 
 
     return next();

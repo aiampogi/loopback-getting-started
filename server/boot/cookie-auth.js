@@ -3,11 +3,9 @@
 var loopback;
 
 loopback = require('loopback');
-var crypto = require('crypto');
 
 module.exports = function(app)
 {
-
   //app.use(loopback.cookieParser('secret'));
 
   // access token will be searched in cookies as well.
@@ -25,7 +23,6 @@ module.exports = function(app)
 
     // res.cookie('XSRF-TOKEN', req.csrfToken());
     // console.log(req.session['wewew']);
-
 
     return next();
   });
@@ -48,14 +45,6 @@ module.exports = function(app)
         // console.log('req.secret: ' + req.secret);
         // console.log('result.id: ' + result.id);
         // console.log(res);
-        var session = req.session;
-        var secret = session['wewew'];
-        // Save the secret for validation
-        if (!secret)
-        {
-          session['wewew'] = crypto.pseudoRandomBytes(10).toString('base64');
-          secret = session['wewew'];
-        }
       }
     }
 
